@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root {
+	--chatbox-margin:			8px;
+	--chatbox-padding:			16px;
+	--chatbox-border-radius:	8px;
+	--chatbox-border-color:		black;
+	--chatbox-border-weight:	2px;
+	--username-width:			275px;
+	--username-shadow:			1px 1px rgba(0, 0, 0, 0.5);
+	--username-input-width:		150px;
+	--chatbox-height:			90%;
+	--chatform-height:			5%;
+}
+
+body {
+	/*Intern posititionning*/
+	padding:		var(--chatbox-margin);
+	padding-bottom:	0;
+	margin:			0;
+
+	/*Fonts adjustement*/
+	font-family:	'Montserrat', sans-serif;
+}
+
+.chat {
+	/*Positionning*/
+	padding:					var(--chatbox-padding);
+	height:						var(--chatbox-height);
+	
+	/*Borders*/
+	border-top-left-radius:		var(--chatbox-border-radius);
+	border-top-right-radius:	var(--chatbox-border-radius);
+	border:						var(--chatbox-border-weight) solid var(--chatbox-border-color);
+
+	/*Overflow*/
+	overflow-y:					scroll;
+}
+
+.chat .msg {
+	/*Inline positionning*/
+	display: flex;
+}
+
+.chat .msg .msg-username {
+	/*A way to align all contents*/
+	width: var(--username-width);
+
+	/*Text handling and decoration*/
+	text-shadow: var(--username-shadow);
+	overflow-wrap: anywhere;
+}
+
+.chat .msg .msg-content {
+	/*Text handling*/
+	overflow-wrap: anywhere;
+	width: 100%;
+}
+
+.chat .msg .msg-date {
+	color: gray;
+	font-size: small;
+}
+
+#chatForm {
+	/*Intern positionning*/
+	display: flex;
+	/*Positionning*/
+	height: var(--chatform-height);
+	margin-bottom: 0;
+}
+
+textarea, button {
+	/*Prevent resizing*/
+	resize: none;
+	/*Borders*/
+	border-radius: 0;
+}
+
+#username {
+	width: var(--username-input-width);
+	border-bottom-left-radius: var(--chatbox-border-radius);
+}
+
+#message {
+	width: 100%;
+}
+
+button {
+	width: 5%;
+	border-bottom-right-radius: var(--chatbox-border-radius);
+}
